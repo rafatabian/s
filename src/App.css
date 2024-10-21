@@ -14,8 +14,6 @@
    object-fit: cover;
    background-position: center center;
    background-repeat: no-repeat;
-   max-width: 100vw;
-   max-height: 100vh;
    position: absolute;
    top: 0;
    left: 0;
@@ -95,22 +93,23 @@ button{
   height: 35px;
 }
 .heart_pop_out{
- animation:  heart_anim 1s ease-in forwards;
+ animation:  heart_anim 1.3s ease-in-out forwards;
  z-index: 99;
 }
 
 @keyframes heart_anim {
   0%{
     scale: 1;
-    opacity: 0;
+    opacity: 0.4;
   }
-  80%{
-    scale: 40;
-    opacity: 1;
+
+  50%{
+    scale: 50;
+    opacity: 0.4;
   }
   100%{
-    scale: 1;
     opacity: 1;
+    scale:1 
   }
 
 }
