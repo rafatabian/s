@@ -85,7 +85,7 @@ button{
 }
 .heart{
   position: absolute;
-  color:red;
+  color:#D32F2F;
   bottom: 20vh;
 }
 .heart svg{
