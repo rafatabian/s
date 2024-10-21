@@ -1,5 +1,5 @@
 import sunrise from "./assets/s_img_1.jpg"
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import "./App.css"
 import sad from "./assets/s_sad.jpg"
 import average from "./assets/s_average.jpg"
@@ -9,9 +9,24 @@ import happy from "./assets/s_happy.jpg"
 const App = () => {
   const [sleep, setSleep] = useState(0)
   const [love, setLove] = useState(false)
+  const [mobile, setMobile] = useState(false)
+
+  // check vw and trow message
+  useEffect(() => {
+   if(window.innerWidth > 550){
+    setMobile(true)
+   }
+  }, [])
 
 
   return (
+    <>
+    {mobile 
+  ? <div className="mobile_conainter">
+     <span>🙃</span>
+     <span>open on mobile amore</span>
+    </div>
+  :
     <div className='app_container'>
       {sleep === 0 &&
         <>
@@ -52,6 +67,7 @@ const App = () => {
 
 
     </div>
+}</>
   )
 }
 
