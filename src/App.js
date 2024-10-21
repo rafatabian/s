@@ -10,6 +10,7 @@ const App = () => {
   const [sleep, setSleep] = useState(0)
   const [love, setLove] = useState(false)
 
+
   return (
     <div className='app_container'>
       {sleep === 0 &&
@@ -28,26 +29,26 @@ const App = () => {
       }
 
       { sleep === 1 &&
-      <>
+      <div className="sad_container">
       <img src={sad} className="sunrise"/>
       <p className="text1">Oh no! Looks like the bed won this round. Don’t worry, I’ll make sure you get the best spot next time</p>
-      <span onClick={() => setLove(!love)} className="heart">{love ? <FaHeart /> : <FaRegHeart />}</span>
-      </>
+      <span onClick={() => setLove(!love)} className={`heart ${love ? "heart_pop_out" : null}`}>{love ? <FaHeart /> : <FaRegHeart />}</span>
+      </div>
       }
 
       {sleep === 2 && 
-      <>
+      <div className="sad_container">
       <img src={average} className="sunrise"/>
       <p className="text1">Not too bad, but I think we can definitely make tonight a bit cozier. Come amore</p>
-      <span onClick={() => setLove(!love)} className="heart">{love ? <FaHeart /> : <FaRegHeart />}</span>
-      </>}
+      <span onClick={() => setLove(!love)} className={`heart ${love ? "heart_pop_out" : null}`}>{love ? <FaHeart /> : <FaRegHeart />}</span>
+      </div>}
 
       {sleep === 3 && 
-      <>
+      <div className="sad_container">
       <img src={happy} className="sunrise"/>
       <p className="text2">Well, someone's a sleep expert! I bet even the bed is jealous</p>
-      <span onClick={() => setLove(!love)} className="heart">{love ? <FaHeart /> : <FaRegHeart />}</span>
-      </>}
+      <span onClick={() => setLove(!love)} className={`heart ${love ? "heart_pop_out" : null}`}>{love ? <FaHeart /> : <FaRegHeart />}</span>
+      </div>}
 
 
     </div>
